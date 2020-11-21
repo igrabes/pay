@@ -18,7 +18,7 @@ module Pay
               return
             end
 
-            subscription = Pay.subscription_model.new(name: "default", owner: owner, processor: :stripe, processor_id: object.id)
+            subscription = Pay.subscription_model.new(name: "default", owner: owner, processor: :stripe, processor_id: object.id, status: object.status)
           end
 
           subscription.quantity = object.quantity
